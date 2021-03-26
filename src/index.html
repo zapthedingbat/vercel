@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Bad UX</title>
+  </head>
+  <body>
+    <div class="view" data-name="welcome">
+      <div class="container">
+        <h1>Welcome</h1>
+        <p>
+          Before we get started you just need to create an account. It really
+          shouldn't take very long, we only need a couple of details.
+        </p>
+        <div>
+          <p>Ready, set, ...</p>
+          <button class="btn primary" id="start">Create an account</button>
+        </div>
+      </div>
+    </div>
+    <div class="view" data-name="register">
+      <div class="timer">
+        <span id="seconds">0</span><span id="milliseconds">0</span>
+        <span class="unit">sec</span>
+      </div>
+
+      <div id="wfos" class="hidden">
+        <div class="container">A word from our sponsor: 'buy more stuff!'</div>
+      </div>
+
+      <div class="container">
+        <h1>Register</h1>
+
+        <form autocomplete="off">
+          <div id="error" class="error hidden"></div>
+          <div class="form-group">
+            <label class="form-label" for="username">Username</label>
+            <input
+              class="form-control"
+              id="username"
+              type="text"
+              tabindex="-1"
+            />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="password">Password</label>
+            <input
+              class="form-control"
+              id="password"
+              type="password"
+              tabindex="-1"
+              autocomplete="off"
+            />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="confirmPassword"
+              >Confirm Password</label
+            >
+            <input
+              class="form-control"
+              id="confirmPassword"
+              type="password"
+              tabindex="-1"
+              autocomplete="off"
+            />
+          </div>
+          <div class="accept">
+            <div class="form-group">
+              <input id="tandc" type="checkbox" tabindex="-1" />
+              <span> I accept the terms and conditions </span>
+            </div>
+            <div class="form-group">
+              <input id="privacy" type="checkbox" tabindex="-1" />
+              <span> I accept the privacy policy </span>
+            </div>
+            <div class="form-group">
+              <input id="spam" type="checkbox" tabindex="-1" />
+              <label for="spam"> I accept unsolicited email </label>
+            </div>
+          </div>
+          <div class="button-row">
+            <button type="button" class="btn left" id="cancel" tabindex="-1">
+              Cancel
+            </button>
+            <button type="button" class="btn primary" id="submit" tabindex="-1">
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="view" data-name="complete">
+      <div class="container">
+        <h1>Complete!</h1>
+        <p>You managed to sign up in <span id="result">0</span> seconds!</p>
+      </div>
+    </div>
+    <div class="newsletter overlay-container hidden" data-overlay="newsletter">
+      <div class="overlay-content">
+        <div class="container">
+          <div class="overlay-close" data-overlay-close="newsletter">
+            &#128473;
+          </div>
+          <h1>Newsletter!</h1>
+          <p>Maybe now would be a good time to sign up for the newsletter?</p>
+          <div class="form-group">
+            <label class="form-label" for="newsletterEmail"
+              >Email address</label
+            >
+            <input
+              class="form-control"
+              id="newsletterEmail"
+              type="text"
+              autocomplete="off"
+            />
+          </div>
+          <div class="button-row">
+            <button
+              type="button"
+              class="btn primary"
+              tabindex="-1"
+              data-overlay-close="newsletter"
+            >
+              Sign me up!
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="consent overlay-container hidden" data-overlay="consent">
+      <div class="overlay-content">
+        <div class="container">
+          <h1>We value your privacy!</h1>
+          <p>
+            This website uses cookies. Click on the button below to consent to
+            the use and collection of information, knowledge, wisdom, wealth,
+            stamps, those small plastic trolls with the colored hair and
+            Pokémon. We keep your user account preferences and settings in a
+            small box. You submit. We collect. Information sent by your
+            computer, browser, or mobile device will be stored under the bed and
+            looked at when we are lonely to remind us of this time we had
+            together. You may still receive non-promotional communications and
+            christmas cards. This does not include personalisation, the
+            collection of information about you, your life and your darkest
+            secrets to subsequently personalise advertising and/or content for
+            you in other contexts, such as on other websites or apps, in your
+            home or wherever you travel to create a perfectly crafted utopian
+            world where you will always be happy because you see just the right
+            advertisements. It is recommended that you do not disable cookies.
+            Freely Give Consent.
+          </p>
+          <div class="button-row">
+            <button
+              type="button"
+              class="btn primary"
+              tabindex="-1"
+              data-overlay-close="consent"
+            >
+              Accept all the things!
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="permission overlay-container hidden" data-overlay="permission">
+      <div class="container">
+        <div class="overlay-content">
+          <p>
+            <span class="notifications-icon"></span>
+            <span id="permissionText"></span>
+          </p>
+          <div class="button-row">
+            <button
+              type="button"
+              class="btn tiny right"
+              tabindex="-1"
+              data-overlay-close="permission"
+            >
+              Block
+            </button>
+            <button
+              type="button"
+              class="btn tiny"
+              tabindex="-1"
+              data-overlay-close="permission"
+            >
+              Allow
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="spam overlay-container hidden" data-overlay="spam">
+      <button
+        type="button"
+        class="btn new-game"
+        tabindex="-1"
+        data-overlay-close="spam"
+      >
+        New Game
+      </button>
+    </div>
+  </body>
+</html>
